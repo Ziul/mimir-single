@@ -1,0 +1,16 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: {{ include "mimir-single.fullname" . }}-config
+  labels:
+    {{- include "mimir-single.labels" . | nindent 4 }}
+data:
+  mimir.yaml: |
+    {{- /* Define valores padrão dentro do template */}}
+    {{- $defaultConfig := dict "target" "all,alertmanager" "memberlist" (dict "join_members" (list (printf "%s-headless" (include "mimir-single.fullname" .)))) "server" (dict "log_level" "debug") }}
+
+    {{- /* Faz o merge dos valores padrão com .Values.config */}}
+    {{- $mergedConfig := merge .Values.config $defaultConfig }}
+
+    {{- /* Converte o resultado em YAML com recuo adequado */}}
+    {{- toYaml $mergedConfig | nindent 4 }}
