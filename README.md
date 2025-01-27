@@ -71,10 +71,8 @@ Here's an example `values.yaml` file to deploy Grafana Mimir with custom setting
 ```yaml
 replicaCount: 1
 config:
-  - key: "auth_enabled"
-    value: "true"
-  - key: "metrics_retention"
-    value: "30d"
+  retention:
+    retentionPeriod: 1d
 resources:
   requests:
     memory: "2Gi"
