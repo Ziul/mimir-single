@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  mimir-single:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-07-17T14:46:47.289539559Z"
+    description: A Helm chart for Kubernetes
+    digest: 13f90cdd3042662396523588e8fa23607eb1e351653fd21f2dbfbc6fca655934
+    name: mimir-single
+    type: application
+    urls:
+    - https://ziul.github.io/mimir-single/mimir-single-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-07-17T14:46:47.288737469Z"
