@@ -22,7 +22,7 @@ on:
 
 jobs:
   versioning:
-    uses: Ziul/swagger-operator/blob/main/.github/workflows/version.yaml
+    uses: Ziul/swagger-operator/blob/main/.github/workflows/version.yaml@main
     with:
       runner: ubuntu-latest
 
